@@ -91,8 +91,8 @@ class RecipeCard extends HTMLElement {
       font-size: 12px;
     }`;
     // A5. Append the <style> and <article> elements to the Shadow DOM
-    shadowDOM.append(styles);
-    shadowDOM.append(article);
+    shadowDOM.appendChild(styles);
+    shadowDOM.appendChild(article);
   }
 
   /**
@@ -121,7 +121,7 @@ class RecipeCard extends HTMLElement {
     if (!data) return;
 
     // A6. Select the <article> we added to the Shadow DOM in the constructor
-    let article = this.shadowDOM.querySelector('article');
+    let article = this.shadowRoot.querySelector('article');
     // A7. Set the contents of the <article> with the <article> template given in
     //           cardTemplate.html and the data passed in (You should only have one <article>,
     //           do not nest an <article> inside another <article>). You should use Template
